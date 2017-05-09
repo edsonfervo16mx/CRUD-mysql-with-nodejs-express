@@ -1,1 +1,10 @@
-h1 holamundo
+extends ./layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1().
+				List Profiles
+			h2 #{line[0].name_profile}
+			div
+				-for(i=line.length-1;i>=0;i-- )
+					p=line[i].cve_profile+" "+line[i].name_profile+" "+line[i].lastname_profile+" "+line[i].email_profile+" "+line[i].datebird_profile

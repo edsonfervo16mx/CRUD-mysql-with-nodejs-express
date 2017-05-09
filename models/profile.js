@@ -1,14 +1,5 @@
-var express = require("express");
-var app = express();
-//Models
-var Connect = require("./models/connection").Connect;
-
-app.use("/files",express.static("public"));
-
-app.set("template engine", "pug");
-
-app.get("/",function(request,response){
-	var query = Connect.query('SELECT cve_profile,name_profile, lastname_profile,email_profile,datebirth_profile FROM profile', [], function(error, result){
+/*
+var query = Connect.query('SELECT cve_profile,name_profile, lastname_profile,email_profile,datebirth_profile FROM profile WHERE cve_profile = ?', [1], function(error, result){
 	  	if(error){
 	     	throw error;
 	  	}
@@ -24,6 +15,5 @@ app.get("/",function(request,response){
 	});
 
 	Connect.end();
-});
-
-app.listen(8080);
+/**/
+//falta
