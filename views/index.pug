@@ -4,7 +4,12 @@ block container
 		div(class="panel")
 			h1().
 				List Profiles
-			h2 #{line[0].name_profile}
 			div
-				-for(i=line.length-1;i>=0;i-- )
-					p=line[i].cve_profile+" "+line[i].name_profile+" "+line[i].lastname_profile+" "+line[i].email_profile+" "+line[i].datebird_profile
+				table(class="table" border="1px")
+					for profile in line
+						tr
+							td #{profile.cve_profile}
+							td #{profile.name_profile}
+							td #{profile.lastname_profile}
+							td #{profile.email_profile}
+							td #{profile.datebirth_profile}
