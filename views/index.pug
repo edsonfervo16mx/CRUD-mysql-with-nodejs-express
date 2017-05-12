@@ -4,8 +4,23 @@ block container
 		div(class="panel")
 			h1().
 				List Profiles
-			div
-				table(class="table" border="1px")
+			hr
+			div(class="column three")
+				a(href="#" class="button button-primary").
+					Agregar Usuario
+			div(class="column twelve")
+				table(class="")
+					thead
+						tr
+							th CLAVE
+							th NOMBRE
+							th APELLIDO
+							th CORREO
+							th FECHA DE NACIMIENTO
+							th POST
+							th PERFIL
+							th MODIFICAR
+							th ELIMINAR
 					for profile in line
 						tr
 							td #{profile.cve_profile}
@@ -13,3 +28,15 @@ block container
 							td #{profile.lastname_profile}
 							td #{profile.email_profile}
 							td #{profile.datebirth_profile}
+							td
+								a(href="/post").
+									Ver
+							td
+								a(href="/profile/").
+									Ver
+							td
+								a(href="/edit").
+									Editar
+							td
+								a(href="/delete").
+									Eliminar

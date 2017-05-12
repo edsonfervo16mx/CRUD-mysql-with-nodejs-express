@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 //Models
 var Connect = require("./models/connection").Connect;
+//Routes
+var router_profile = require("./routes-profile")
 
 app.use("/files",express.static("public"));
 
@@ -15,7 +17,6 @@ app.get("/",function(request,response){
 	  	else{
 	     	var resultado = result;
 		     	if(resultado.length > 0){
-			        console.log(resultado[0].cve_profile + ' ' + resultado[0].name_profile + ' / ' + resultado[0].lastname_profile +' ' + resultado[0].email_profile + ' ' + resultado[0].datebirth_profile);
 			        response.render("index.pug",{ line: result});
 			    }else{
 			        console.log('Registro no encontrado');
@@ -26,4 +27,7 @@ app.get("/",function(request,response){
 	//Connect.end();
 });
 
+
+// aplicando routes
+app.use("/profile",router_profile);
 app.listen(8080);
