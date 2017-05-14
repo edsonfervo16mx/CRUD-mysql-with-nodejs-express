@@ -1,1 +1,16 @@
-h1 Ver perfil
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Perfil
+			hr
+			div(class="row")
+				div(class="offset-by-nine three columns")
+					a(href="../" class="button") Regresar
+			for profile in line
+				div(class="twelve columns").
+					#[strong Clave:] #{profile.cve_profile} <br>
+					#[strong Nombre:] #{profile.name_profile} <br>
+					#[strong Apellido:] #{profile.lastname_profile} <br>
+					#[strong Correo:] #{profile.email_profile} <br>
+					#[strong Fecha:] #{profile.datebirth_profile} <br>

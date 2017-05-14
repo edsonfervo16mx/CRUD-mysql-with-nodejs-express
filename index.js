@@ -1,16 +1,16 @@
 var express = require("express");
 var app = express();
-//Models
+//Conexion
 var Connect = require("./models/connection").Connect;
 //Routes
-var router_profile = require("./routes-profile")
+var router_profile = require("./routes-profile");
 
 app.use("/files",express.static("public"));
 
 app.set("template engine", "pug");
 
 app.get("/",function(request,response){
-	var query = Connect.query('SELECT cve_profile,name_profile, lastname_profile,email_profile,datebirth_profile FROM profile', [], function(error, result){
+	var query = Connect.query('SELECT cve_profile,name_profile, lastname_profile,email_profile,datebirth_profile FROM profile', [], function(error, result, fields){
 	  	if(error){
 	     	throw error;
 	  	}
