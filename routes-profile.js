@@ -4,6 +4,10 @@ var fs = require("fs");
 //Conexion
 var Connect = require("./models/connection").Connect;
 /**/
+router.get("/",function(request,response){
+	response.render("profile/new.pug");
+});
+
 router.get("/:id",function(request,response){
 	var query = Connect.query('SELECT cve_profile, name_profile, lastname_profile, email_profile, datebirth_profile FROM profile WHERE cve_profile = ? LIMIT 1', [request.params.id], function(error, result, fields){
 	  	if(error){
@@ -22,5 +26,15 @@ router.get("/:id",function(request,response){
 	//Connect.end();
 });
 /**/
+
+router.post("/",function(request,response){
+	console.log("POST:");
+	console.log(request.fields.name);
+	console.log(request.fields.lastname);
+	console.log(request.fields.email);
+	console.log(request.fields.datebirth);
+	response.redirect("/");
+});
+
 
 module.exports = router;

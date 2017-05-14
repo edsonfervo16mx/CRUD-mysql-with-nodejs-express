@@ -6,10 +6,10 @@ block container
 				List Profiles
 			hr
 			div(class="three columns")
-				a(href="#" class="button button-primary").
-					Agregar Usuario
+				a(href="/profile" class="button button-primary").
+					Agregar Perfil
 			div(class="twelve columns")
-				table(class="")
+				table(class="u-full-width")
 					thead
 						tr
 							th CLAVE
@@ -21,22 +21,23 @@ block container
 							th PERFIL
 							th MODIFICAR
 							th ELIMINAR
-					for profile in line
-						tr
-							td #{profile.cve_profile}
-							td #{profile.name_profile}
-							td #{profile.lastname_profile}
-							td #{profile.email_profile}
-							td #{profile.datebirth_profile}
-							td
-								a(href="/post").
-									Ver
-							td
-								a(href="/profile/"+profile.cve_profile+"").
-									Ver
-							td
-								a(href="/edit").
-									Editar
-							td
-								a(href="/delete").
-									Eliminar
+					tbody
+						for profile in line
+							tr
+								td #{profile.cve_profile}
+								td #{profile.name_profile}
+								td #{profile.lastname_profile}
+								td #{profile.email_profile}
+								td #{profile.datebirth_profile}
+								td
+									a(href="/post").
+										Ver
+								td
+									a(href="/profile/"+profile.cve_profile+"").
+										Ver
+								td
+									a(href="/edit").
+										Editar
+								td
+									a(href="/delete").
+										Eliminar

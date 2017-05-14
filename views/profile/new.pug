@@ -1,0 +1,28 @@
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Agregar perfil
+			hr
+			div(class="row")
+				div(class="offset-by-nine three columns")
+					a(href="../" class="button") Regresar
+				fiv(class="twelve columns")
+					form(action="" method="POST")
+						div(class="row")
+							div(class="six columns")
+								label(for="name") Nombre
+								input(type="text" name="name" id="name" class="u-full-width" placeholder="Nombre")
+							div(class="six columns")
+								label(for="lastname") Apellido de Perfil
+								input(type="text" name="lastname" id="lastname" class="u-full-width" placeholder="Apellido")
+						div(class="row")
+							div(class="six columns")
+								label(for="email") Correo electrónico
+								input(type="email" name="email" id="email" class="u-full-width" placeholder="Correo electrónico")
+							div(class="six columns")
+								label(for="datebirth") Fecha de Nacimiento
+								input(type="date" name="datebirth" id="datebirth" class="u-full-width" placeholder="Correo electrónico")
+						div(class="row")
+							div(class="twelve columns")
+								input(type="submit" value="Registrar" class="button button-primary u-full-width")

@@ -5,6 +5,14 @@ var Connect = require("./models/connection").Connect;
 //Routes
 var router_profile = require("./routes-profile");
 
+//express-formidable
+var formidable = require("express-formidable");
+app.use(formidable({
+	keepExtensions: true,
+	encoding: 'utf-8'
+}))
+
+
 app.use("/files",express.static("public"));
 
 app.set("template engine", "pug");
