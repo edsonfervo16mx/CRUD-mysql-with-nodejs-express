@@ -12,7 +12,6 @@ app.use(formidable({
 	encoding: 'utf-8'
 }))
 
-
 app.use("/files",express.static("public"));
 
 app.set("template engine", "pug");

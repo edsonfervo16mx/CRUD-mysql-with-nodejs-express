@@ -1,0 +1,29 @@
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Editar perfil
+			hr
+			div(class="row")
+				div(class="offset-by-nine three columns")
+					a(href="../../" class="button") Regresar
+			for profile in line
+				div(class="twelve columns")
+					form(action="" method="POST")
+						div(class="row")
+							div(class="six columns")
+								label(for="name") Nombre
+								input(type="text" name="name" id="name" value=""+profile.name_profile+"" class="u-full-width" placeholder="Nombre")
+							div(class="six columns")
+								label(for="lastname") Apellido de Perfil
+								input(type="text" name="lastname" id="lastname" value=""+profile.lastname_profile+"" class="u-full-width" placeholder="Apellido")
+						div(class="row")
+							div(class="six columns")
+								label(for="email") Correo electrónico
+								input(type="email" name="email" id="email" value=""+profile.email_profile+"" class="u-full-width" placeholder="Correo electrónico")
+							div(class="six columns")
+								label(for="datebirth") Fecha de Nacimiento
+								input(type="date" name="datebirth" id="datebirth" value=""+profile.datebirth_profile+"" class="u-full-width" placeholder="Correo electrónico")
+						div(class="row")
+							div(class="twelve columns")
+								input(type="submit" value="Modificar" class="button button-primary u-full-width")

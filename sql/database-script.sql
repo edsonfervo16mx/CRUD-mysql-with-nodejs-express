@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 08-05-2017 a las 20:24:02
--- Versión del servidor: 5.7.18-0ubuntu0.16.10.1
--- Versión de PHP: 7.0.15-0ubuntu0.16.10.4
+-- Tiempo de generación: 20-05-2017 a las 09:18:07
+-- Versión del servidor: 5.7.18-0ubuntu0.17.04.1
+-- Versión de PHP: 7.0.18-0ubuntu0.17.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,7 +60,10 @@ CREATE TABLE `profile` (
 
 INSERT INTO `profile` (`cve_profile`, `name_profile`, `lastname_profile`, `email_profile`, `datebirth_profile`) VALUES
 (1, 'Homero', 'Jimenez', 'homero@hotmail.com', '1991-12-10'),
-(2, 'Arturo', 'De la Cruz', 'arturo@gmail.com', '1991-03-07');
+(2, 'Arturo', 'De la Cruz', 'arturo@gmail.com', '1991-03-07'),
+(3, 'Jonas', 'Aguilar', 'jonasaguilar@gmail.com', '2001-02-10'),
+(4, 'Ana', 'Flores', 'anaflores@hotmail.com', '1990-10-01'),
+(5, 'Cecilia', 'Olan', 'cecyolan@gmail.com', '1991-10-15');
 
 --
 -- Índices para tablas volcadas
@@ -92,7 +95,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT de la tabla `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `cve_profile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cve_profile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
