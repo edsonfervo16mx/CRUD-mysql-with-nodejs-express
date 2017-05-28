@@ -6,7 +6,8 @@ var connection = mysql.createConnection({
 	user: 'personadb',
 	password: 'qwerty123',
 	database: 'test-nodejs',
-	port: 3306
+	port: 3306,
+	multipleStatements: true
 });
 
 

@@ -1,0 +1,31 @@
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Editar Publicación
+			hr
+			div(class="row")
+				div(class="offset-by-nine three columns")
+					a(href="../" class="button") Regresar
+				div(class="twelve columns")
+					for post in data_post
+						form(action="" method="POST")
+							input(type="text" name="clave" id="clave" value=""+post.cve_post+"" class="u-full-width" placeholder="Clave" hidden)
+							div(class="row")
+								div(class="four columns offset-by-two")
+									label(for="title") Titulo
+									input(type="text" name="title" id="title" value=""+post.title_post+"" class="u-full-width" placeholder="Titulo")
+								div(class="four columns")
+									label(for="profile") Perfil
+									select(name="profile" id="profile" class="u-full-width")
+										for profile in list_profile
+											if profile.cve_profile == post.cve_profile
+												option(value=""+profile.cve_profile+"" selected) #{profile.name_profile +" "+profile.lastname_profile}
+											else
+												option(value=""+profile.cve_profile+"") #{profile.name_profile +" "+profile.lastname_profile}
+								div(class="eight columns offset-by-two")
+									label(for="description") Descripción
+									textarea(name="description" id="description" class="u-full-width" placeholder="Descripcion").
+										#{post.description_post}
+								div(class="eight columns offset-by-two")
+									input(type="submit" value="Publicar" class="button button-primary u-full-width")

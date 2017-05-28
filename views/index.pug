@@ -5,9 +5,11 @@ block container
 			h1().
 				List Profiles
 			hr
-			div(class="three columns")
+			div(class="six columns")
 				a(href="/profile" class="button button-primary").
 					Agregar Perfil
+				a(href="/post" class="button button-primary").
+					Agregar Publicación
 			div(class="twelve columns")
 				table(class="u-full-width")
 					thead
@@ -30,7 +32,7 @@ block container
 								td #{profile.email_profile}
 								td #{profile.datebirth_profile}
 								td
-									a(href="/post").
+									a(href="/post/"+profile.cve_profile+"").
 										Ver
 								td
 									a(href="/profile/"+profile.cve_profile+"").

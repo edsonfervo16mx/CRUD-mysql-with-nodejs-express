@@ -1,0 +1,25 @@
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Agregar Publicación
+			hr
+			div(class="row")
+				div(class="offset-by-nine three columns")
+					a(href="../" class="button") Regresar
+				div(class="twelve columns")
+					form(action="" method="POST")
+						div(class="row")
+							div(class="four columns offset-by-two")
+								label(for="title") Titulo
+								input(type="text" name="title" id="title" class="u-full-width" placeholder="Titulo")
+							div(class="four columns")
+								label(for="profile") Perfil
+								select(name="profile" id="profile" class="u-full-width")
+									for profile in line
+										option(value=""+profile.cve_profile+"") #{profile.name_profile +" "+profile.lastname_profile}
+							div(class="eight columns offset-by-two")
+								label(for="description") Descripción
+								textarea(name="description" id="description" class="u-full-width" placeholder="Descripcion")
+							div(class="eight columns offset-by-two")
+								input(type="submit" value="Publicar" class="button button-primary u-full-width")

@@ -1,0 +1,30 @@
+extends ../layout.pug
+block container
+	div(class="container")
+		div(class="panel")
+			h1 Mostrar Publicaciones
+			hr
+			div(class="row")
+				div(class="three columns")
+					p Usuario
+				div(class="offset-by-six three columns")
+					a(href="../../" class="button") Regresar
+				div(class="twelve columns")
+					table(class="u-full-width")
+						thead
+							tr
+								th CLAVE
+								th TITULO
+								th DESCRIPCION
+								th Editar
+								th Eliminar
+						tbody
+							for post in line
+								tr
+									td #{post.cve_post}
+									td #{post.title_post}
+									td #{post.description_post}
+									td
+										a(href="/post/edit/"+post.cve_post+"") Editar
+									td
+										a(href="/post/delete/"+post.cve_post+""+post.cve_profile) Eliminar
